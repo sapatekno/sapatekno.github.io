@@ -2,19 +2,66 @@
 layout: default
 ---
 
-<div class="container">
+<div class="container mt-3 mb-3">
+  <!-- breadcrumb -->
+  <div class="row" id="breadcrumb">
+    <div class="col-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ site.url }}" itemprop="item">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1">
+          </li>
+          <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ site.url }}" itemprop="item">
+              <span itemprop="name">Blog</span>
+            </a>
+            <meta itemprop="position" content="2">
+          </li>
+          <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope
+            itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{{ page.title }}</span>
+            <meta itemprop="position" content="3">
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-12">
-      <small>{{ page.date | date: "%-d %B %Y" }}</small>
-      <h1>{{ page.title }}</h1>
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <article itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <meta itemprop="mainEntityOfPage" content="{{ page.url }}">
+            <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="{{ page.author | default:site.author }}">
+              <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                <meta itemprop="url" content="{{site.url}}/favicon.png">
+              </span>
+            </span>
+            <h1 itemprop="name headline">{{ page.title }}</h1>
+            <p>
+              written by
+              <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">{{ page.author | default: site.author }}</span>
+              </span>
+              at
+              <time datetime="{{ page.date | date: "%-d %B %Y" }}" itemprop="datePublished">
+                {{ page.date | date: "%-d %B %Y" }}
+              </time>
+            </p>
 
-      <p class="view">by {{ page.author | default: site.author }}</p>
+            {{content}}
 
-      {{content}}
-
-      {% if page.tags %}
-      <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-      {% endif %}
+            {% if page.tags %}
+            <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+            {% endif %}
+          </article>
+        </div>
+      </div>
     </div>
   </div>
 </div>

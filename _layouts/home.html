@@ -5,17 +5,6 @@ layout: default
 {%- if site.posts.size > 0 -%}
 <div class="container mt-3">
   <div class="row">
-    <div class="col-lg-12">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{{ page.list_title | default: "Posts" }}</li>
-        </ol>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-
     {%- for post in site.posts -%}
     <div class="col-lg-6 mb-3">
       <div class="card shadow-sm">
@@ -25,13 +14,11 @@ layout: default
               {{ post.title | escape }}
             </a>
           </h5>
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
           <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="{{ post.url | relative_url }}" class="btn btn-sm btn-primary">Read More</a>
         </div>
         <div class="card-footer text-muted">
-          2 days ago
+          <span>{{ post.date | date: "%-d %B %Y" }}</span>
         </div>
       </div>
     </div>
