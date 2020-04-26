@@ -5,7 +5,7 @@ layout: default
 {%- if site.posts.size > 0 -%}
 <div class="container mt-3">
   <div class="row">
-    {%- for post in site.posts -%}
+    {%- for post in paginator.posts -%}
     <div class="col-lg-6 mb-3">
       <div class="card shadow-sm">
         <div class="card-body">
@@ -25,5 +25,39 @@ layout: default
     {%- endfor -%}
   </div>
 </div>
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="container mt-3">
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      {% if paginator.previous_page %}
+      <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+      </li>
+      {% else %}
+      <li class="page-item disabled"><span class="page-link">Previous</span></li>
+      {% endif %}
+
+      {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <li class="page-item active"><span class="page-link">{{ page }}</span></li>
+      {% elsif page == 1 %}
+      <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+      </li>
+      {% else %}
+      <li class="page-item"><a class="page-link"
+          href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a></li>
+      {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+      <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next</a></li>
+      {% else %}
+      <li class="page-item disabled"><span class="page-link">Next</span></li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
+{%- endif -%}
 
 {%- endif -%}

@@ -16,6 +16,7 @@ gem "minima", "~> 2.5"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.11.0"
+  gem "jekyll-paginate", "~> 1.1.0"
   gem "github-pages", "~> 201"
 end
 
