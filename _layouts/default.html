@@ -10,9 +10,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          crossorigin="anonymous" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+          crossorigin="anonymous" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <style>
         body {
@@ -48,70 +48,102 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-        <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container-fluid">
 
-            <a class="navbar-brand" href="{{ site.url }}"><i class="fa fa-user-secret mr-1"></i> {{ site.title }}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <a class="navbar-brand" href="{{ site.url }}"><i class="fa fa-user-secret mr-1"></i> {{ site.title }}</a>
+        <button class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="form-inline my-2 my-lg-0 ml-auto" action="https://google.com/search" method="get">
-                    <div class="form-group has-search">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="hidden" name="sitesearch" value="www.sapatekno.com" /> 
-                        <input type="text" name="q" class="form-control" placeholder="Search this blog">
-                    </div>
-                </form>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form action="https://google.com/search" class="form-inline my-2 my-lg-0 ml-auto" method="get">
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input name="sitesearch" type="hidden" value="www.sapatekno.com"/>
+                    <input class="form-control" name="q" placeholder="Search this blog" type="text">
+                </div>
+            </form>
 
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ site.url }}"><i class="fa fa-home mr-1"></i>Home <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ 'feed.xml' | relative_url }}"><i class="fa fa-rss mr-1"></i>RSS</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-12">
-                <a href="#" class="btn btn-success disabled">#Android</a>
-                <a href="#" class="btn btn-primary disabled">#Book</a>
-                <a href="#" class="btn btn-secondary disabled">#Tutorial</a>
-            </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ site.url }}"><i class="fa fa-home mr-1"></i>Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ 'feed.xml' | relative_url }}"><i class="fa fa-rss mr-1"></i>RSS</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    {{ content }}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body center">
+                            <img alt="Hadian Alkani"
+                                 class="img-fluid rounded-circle mx-auto d-block mb-3"
+                                 src="https://s.gravatar.com/avatar/a24870f535a5a08947e24bccb21e0ce9?s=200"/>
+                            <h2 class="text-center">Hadian Alkani</h2>
+                            <p class="text-center">Mobile Application Developer</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-warning mt-1 mb-1" type="button"><i class="fa fa-user mr-1"></i>
+                                About Me
+                            </button>
+                            <button class="btn btn-success mt-1 mb-1" type="button"><i class="fa fa-envelope mr-1"></i>
+                                Send
+                                Message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 mb-3 d-none d-sm-block">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-play mr-1"></i> <strong>My Media</strong>
+                        </div>
+                        <div class="card-body center">
+                            <p class="text-center">Mobile Application Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            {{ content }}
+        </div>
+    </div>
+</div>
 
-    <footer>
-        <nav class="navbar navbar-dark bg-dark shadow-sm footbar">
-            <div class="container">
-                <ul class="navbar-nav ml-auto mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ 'feed.xml' | relative_url }}"><i
-                                class="fa fa-copyright mr-1"></i>Hadian Alkani 2019</a>
-                    </li>
-                </ul>
-            </div>
-            </div>
-        </nav>
-    </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+<footer>
+    <nav class="navbar navbar-dark bg-dark shadow-sm footbar">
+        <div class="container-fluid">
+            <ul class="navbar-nav ml-auto mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ 'feed.xml' | relative_url }}"><i
+                            class="fa fa-copyright mr-1"></i>Hadian Alkani 2019</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
