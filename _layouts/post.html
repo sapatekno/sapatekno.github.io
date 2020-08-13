@@ -49,18 +49,20 @@ layout: default
                 <span itemprop="name">{{ page.author | default: site.author }}</span>
               </span>
               at
-              <time datetime="{{ page.date | date: "%-d %B %Y" }}" itemprop="datePublished">
-                {{ page.date | date: "%-d %B %Y" }}
+              <time datetime="{{ page.date | date: " %-d %B %Y
+              " }}" itemprop="datePublished">
+              {{ page.date | date: "%-d %B %Y" }}
               </time>
             </p>
 
             {{content}}
 
-            {% include disqus.html %}
-
             {% if page.tags %}
             <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
             {% endif %}
+
+            {% include disqus.html %}
+
           </article>
         </div>
       </div>
