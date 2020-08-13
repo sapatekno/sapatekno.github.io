@@ -56,6 +56,8 @@ layout: default
 
             {{content}}
 
+            {% include disqus.html %}
+
             {% if page.tags %}
             <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
             {% endif %}

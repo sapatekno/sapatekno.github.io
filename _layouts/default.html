@@ -38,13 +38,15 @@
         .footbar {
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
     </style>
     <title>{{ page.title | default: site.title}}</title>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+
+    {% seo %}
 </head>
 
 <body>
