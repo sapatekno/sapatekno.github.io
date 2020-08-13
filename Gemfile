@@ -19,6 +19,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate", "~> 1.1.0"
   gem "github-pages", "~> 207"
   gem "jekyll-seo-tag"
+  gem "jekyll-admin"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
