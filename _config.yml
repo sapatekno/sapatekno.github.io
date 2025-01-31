@@ -16,7 +16,7 @@ timezone: Asia/Jakarta
 
 title: Sapatekno # the main title
 
-tagline: Kode di Layar, Cerita di Meja Makan  # it will display as the subtitle
+tagline: Kode di Layar, Cerita di Meja.  # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Blog seorang programmer dan ayah yang membahas teknologi terkini, opini tech fresh dari sudut pandang developer, dan analisis berita viral di internet. Temukan tutorial coding praktis, refleksi keseharian sebagai orang tua, hingga trending topic yang lagi hits – semua dibahas dengan santai layaknya obrolan di meja makan. Mari belajar teknologi tanpa jargon, dan tertawa bareng cerita chaos antara deadline coding vs rengekan anak!
@@ -98,11 +98,11 @@ theme_mode: light
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://gravatar.com/userimage/119165428/d9e7c811e28f73f3313a6dc9faace60f.png?size=256&cache=1738310311316
+avatar: https://files.sapatekno.com/images/avatar_hadian.webp
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: https://gravatar.com/userimage/119165428/d9e7c811e28f73f3313a6dc9faace60f.png?size=256&cache=1738310311316 # string, local or CORS resources
+social_preview_image: https://files.sapatekno.com/images/avatar_hadian.webp # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
